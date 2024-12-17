@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> 
+
+    <style>   
+        .required {
+            color: red;  
+        }
+
+        body {
+            background-color: #d1dce7;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 10vh;
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 2%;
+            width: 100%;
+            padding: 2%;
+            flex-direction: row;
+            flex-grow: 1;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            border: 1px solid #d1dce7;
+            width: 48%;
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .button-box {
+            padding: 2%;
+            text-align: center;
+            margin-top: 2%;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .btn {
+            width: 50%; /* Make button smaller */
+        }
+
+        /* Reduced checkbox size */
+        input[type="checkbox"] {
+            width: 10px;  /* Smaller width */
+            height: 10px;  /* Smaller height */
+            margin-right: 10px; /* Adds space between checkbox and label */
+        }
+
+        /* Shorten the 'Important' button */
+        .important-btn {
+            width: 30%; /* Smaller width */
+            padding: 5px;
+        }
+
+        @media (max-width: 700px) {
+            .container1 {
+                flex-direction: column;
+                gap: 0;
+                padding: 0 5%;
+            }
+
+            .form-section {
+                width: 100%;
+            }
+
+            .button-box {
+                padding: 0 5%;
+            }
+
+            .btn {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .container1 {
+                flex-direction: column;
+                gap: 0;
+                padding: 0 2%;
+            }
+
+            .form-section {
+                width: 100%;
+            }
+
+            .button-box {
+                padding: 0 2%;
+            }
+
+            .btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main"> 
+        <h1>Ticket Management</h1>
+    </div> 
+
+    <form class="container1 needs-validation" novalidate>
+        <!-- Left Form Section -->
+        <div class="form-section">
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Prefix:</label>
+                <input name="Prefix" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Sufix:</label>
+                <input name="Sufix" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Ticket number:</label>
+                <input name="Ticketnumber" type="number" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Ticket type id:</label>
+                <select name="Ticketidtype" class="form-select" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="Bug">Bug</option>
+                    <option value="Feature">Feature</option>
+                    <option value="Support">Support</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Client name:</label>
+                <input name="Clientname" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Contact person name:</label>
+                <input name="Contactpersonname" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>ContactPersonMobile:</label>
+                <input name="ContactPersonMobile" type="text" class="form-control" maxlength="10" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>ContactPersonEmail:</label>
+                <input name="ContactPersonEmail" type="email" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="form-section">
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Subject:</label>
+                <input name="Subject" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Ticket status:</label>
+                <select name="Ticketstatus" class="form-select" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="Open">Open</option>
+                    <option value="On hold">On hold</option>
+                    <option value="Escalated">Escalated</option>
+                    <option value="Closed">Closed</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Ticket Owner:</label>
+                <select name="TicketOwner" class="form-select" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="Meena">Meena</option>
+                    <option value="Usha">Usha</option>
+                    <option value="Sush">Sush</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Product name:</label>
+                <select name="Productname" class="form-select" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Laptop">Laptop</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Due Date/Time:</label>
+                <input name="DueDateTime" type="datetime-local" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Priority:</label>
+                <select name="Priority" class="form-select" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Ticket Source:</label>
+                <select name="TicketSource" class="form-select" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="Website">Website</option>
+                    <option value="Application">Application</option>
+                    <option value="Call">Call</option>
+                    <option value="Whatsapp">Whatsapp</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="required">*</label>
+                <label>Description:</label>
+                <textarea name="Description" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <!-- Important checkbox section -->
+            <div class="mb-3">
+                <input type="checkbox" id="important" name="important">
+                <label for="important">Important</label>
+            </div>
+        </div>
+
+        <!-- Submit Button Below Description & Email -->
+        <div class="button-box">
+            <input type="submit" class="btn btn-lg btn-primary important-btn" value="Submit">
+        </div>
+    </form>
+
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
